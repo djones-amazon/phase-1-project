@@ -6,7 +6,7 @@ const getCharList =  async function() {
     const response = await fetch(`https://api.disneyapi.dev/character?films=The%20Lion%20King&pageSize=250`);
     const unfilteredData = await response.json();
     
-    debugger;
+    //debugger;
     return (unfilteredData);
 } 
 
@@ -24,17 +24,17 @@ const sliceBadNames = function() {
             index++;
         });
     });
-    debugger;
+   // debugger;
 }
 
 const getFilteredList = async function() {
     const targetFilm = 'The Lion King';
     const unfilteredData = await getCharList();
-    debugger;
+   // debugger;
     const dataArray = unfilteredData.data;
-    debugger;
+  //  debugger;
     const charFilms = dataArray.map(charObj => charObj.films);
-    debugger;
+  //  debugger;
     
     let index = 0;
     charFilms.forEach(filmList => {
@@ -47,9 +47,10 @@ const getFilteredList = async function() {
         index++;
        // debugger;
     });
-    debugger;
+   // debugger;
     sliceBadNames();
-   // sliceBadNames()
+    renderCards();
+    // sliceBadNames()
     //console.log(filteredNameList);
     //const charNamesList = unfilteredList.map(charObj => )
     //const charFilmsList = [];
@@ -59,9 +60,24 @@ const getFilteredList = async function() {
 }
 
 const renderCards = function() {
+    const cardsDiv = document.getElementById('cardSpace');
+    //debugger;
+    let index = 0;
     filteredNameList.forEach(charName => {
+        const currentFigure =document.createElement('figure');
+        currentFigure.id = `fig${index}`;
+
+        const currentImg = document.createElement('img');
+        currentImg.src = imgLocList[index];
         
-    })
+        const currentImgFigCap = document.createElement('figcaption');
+        currentImgFigCap.innerText = charName;
+        
+        currentFigure.append(currentImg, currentImgFigCap);
+       // debugger;
+        cardsDiv.append(currentFigure);
+        index++;
+    });
 }
 
 

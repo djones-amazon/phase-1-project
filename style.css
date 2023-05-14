@@ -1,0 +1,14 @@
+img {
+    width: 45px;
+    height: 45px;
+  }
+
+  figcaption {
+    width: 45px;
+    background-color: rgb(202, 168, 168);
+    color: rgb(0, 0, 0);
+    font-style: italic;
+    font-size: 10px;
+    padding: 2px;
+    text-align: center;
+  }
