@@ -58,5 +58,11 @@ const getFilteredList = async function() {
         
 }
 
+const renderCards = function() {
+    filteredNameList.forEach(charName => {
+        
+    })
+}
+
 
 document.addEventListener('DOMContentLoaded', getFilteredList());
