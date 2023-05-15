@@ -61,15 +61,15 @@ const getFilteredList = async function() {
 
 const renderCards = function() {
     const cardsDiv = document.getElementById('cardSpace');
-    cardsDiv.classList.add('wrapper');
+    cardsDiv.classList.add('wrapper','row');
     //debugger;
     let index = 0;
     filteredNameList.forEach(charName => {
-        const currentFigure =document.createElement('figure');
+        //const currentFigure =document.createElement('figure');
        // currentFigure.classList.add(`fig${index + 1}`);
         //debugger;
         const figDiv = document.createElement('div');
-        figDiv.classList.add(`fig${index + 1}`);
+        figDiv.classList.add(`fig${index + 1}`,`column`);
 
         const currentImg = document.createElement('img');
         currentImg.src = imgLocList[index];
@@ -80,7 +80,7 @@ const renderCards = function() {
         figDiv.append(currentImg, currentImgFigCap);
         cardsDiv.append(figDiv);
        // debugger;
-        cardsDiv.append(currentFigure);
+        //cardsDiv.append(currentFigure);
         index++;
     });
 }

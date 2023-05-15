@@ -1,6 +1,6 @@
 img {
-    width: 45px;
-    height: 45px;
+    width: 100px;
+    height: 100px;
   }
 
   figcaption {
@@ -40,18 +40,32 @@ img {
       "m m n n o o p p";
    align-items: start;
   }*/
+
   .wrapper {
+    display: flex;
     height: auto;
     width: auto;
     background-color: darkgoldenrod;
     position: relative;
     margin: auto;
+    flex-flow: row wrap;
   }
   
+  /*.row {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }*/
+
   .fig1 {
+    display: block;
     position: relative;
-    top: 100px;
-    left: 300px;
+    height: auto;
+    width: auto;
   }
   
   /*.fig2 {
