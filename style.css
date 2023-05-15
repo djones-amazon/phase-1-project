@@ -12,3 +12,102 @@ img {
     padding: 2px;
     text-align: center;
   }
+
+  /*.container {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(4, 100px);
+  }*/
+
+  /*.wrapper {
+    left: 100px;
+    top: 200px;
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(4, 50px);
+    height: 220px;
+    width: 220px;
+    gap: 5px;
+    grid-template-areas:
+      "a a b b c c d d"
+      "a a b b c c d d"
+      "e e f f g g h h"
+      "e e f f g g h h"
+      "i i j j k k l l"
+      "i i j j k k l l"
+      "m m n n o o p p"
+      "m m n n o o p p";
+   align-items: start;
+  }*/
+  .wrapper {
+    height: auto;
+    width: auto;
+    background-color: darkgoldenrod;
+    position: relative;
+    margin: auto;
+  }
+  
+  .fig1 {
+    position: relative;
+    top: 100px;
+    left: 300px;
+  }
+  
+  /*.fig2 {
+    grid-area: b;
+  }
+  
+  .fig3 {
+    grid-area: c;
+  }
+  
+  .fig4 {
+    grid-area: d;
+  }
+  .fig5 {
+    grid-area: e;
+  }
+  
+  .fig6 {
+    grid-area: f;
+  }
+  
+  .fig7 {
+    grid-area: g;
+  }
+  
+  .fig8 {
+    grid-area: h;
+  }
+  .fig9 {
+    grid-area: i;
+  }
+  
+  .fig10 {
+    grid-area: j;
+  }
+  
+  .fig11 {
+    grid-area: k;
+  }
+  
+  .fig12 {
+    grid-area: l;
+  }
+
+  .fig13 {
+    grid-area: m;
+  }
+  
+  .fig14 {
+    grid-area: n;
+  }
+  
+  .fig15 {
+    grid-area: o;
+  }
+  
+  .fig16 {
+    grid-area: p;
+  }*/

@@ -61,19 +61,24 @@ const getFilteredList = async function() {
 
 const renderCards = function() {
     const cardsDiv = document.getElementById('cardSpace');
+    cardsDiv.classList.add('wrapper');
     //debugger;
     let index = 0;
     filteredNameList.forEach(charName => {
         const currentFigure =document.createElement('figure');
-        currentFigure.id = `fig${index}`;
+       // currentFigure.classList.add(`fig${index + 1}`);
+        //debugger;
+        const figDiv = document.createElement('div');
+        figDiv.classList.add(`fig${index + 1}`);
 
         const currentImg = document.createElement('img');
         currentImg.src = imgLocList[index];
-        
+
         const currentImgFigCap = document.createElement('figcaption');
         currentImgFigCap.innerText = charName;
         
-        currentFigure.append(currentImg, currentImgFigCap);
+        figDiv.append(currentImg, currentImgFigCap);
+        cardsDiv.append(figDiv);
        // debugger;
         cardsDiv.append(currentFigure);
         index++;
