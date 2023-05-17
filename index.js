@@ -1,7 +1,6 @@
 const filteredNameList = [];
 const imgLocList = [];
 
-
 const getCharList =  async function() {
     const response = await fetch(`https://api.disneyapi.dev/character?films=The%20Lion%20King&pageSize=250`);
     const unfilteredData = await response.json();
@@ -50,6 +49,8 @@ const getFilteredList = async function() {
    // debugger;
     sliceBadNames();
     renderCards();
+    initGame();
+
     // sliceBadNames()
     //console.log(filteredNameList);
     //const charNamesList = unfilteredList.map(charObj => )
@@ -85,5 +86,29 @@ const renderCards = function() {
     });
 }
 
+const runGame = () => {
+    const userEntry = document.getElementById("ansBox");
+    let userScore = 0;
 
+    userEntry.addEventListener('input', (e) => {
+        const isMatch = filteredNameList.includes(e.target.value);
+        
+        if(isMatch ) {
+            userScore++;
+            console.log(userScore);
+            e.target.value = "";
+            e.preventDefault();
+        }
+    });
+}
+
+const initGame = () => {
+    const gameForm = document.getElementById('mainForm');
+    //debugger;
+    gameForm.elements['startGame'].addEventListener('click', (e) => {
+        runGame();
+        e.preventDefault();
+    });
+    //debugger;
+}
 document.addEventListener('DOMContentLoaded', getFilteredList());

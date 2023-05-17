@@ -4,7 +4,7 @@ img {
   }
 
   figcaption {
-    width: 45px;
+    width: 100px;
     background-color: rgb(202, 168, 168);
     color: rgb(0, 0, 0);
     font-style: italic;
