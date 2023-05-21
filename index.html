@@ -8,10 +8,10 @@
   <title></title>
 </head>
 <body>
-  <form id="mainForm">
-    <button type="submit" name="startGame">START</button><button type="submit" name="restart">RESTART</button><br>
-    <label for="ansBox">Input Answer Here:</label><br>
-    <input type="text" id="ansBox">
+  <form autocomplete="off" id="mainForm">
+    <button type="submit" name="startGame">START</button><button type="submit" class="hiddenAsset" name="restart">RESTART</button><br>
+    <label for="ansBox" class="hiddenAsset" id="ansBoxLabel">Input Answer Here:</label><br>
+    <input type="text" class="hiddenAsset" autocomplete="off" id="ansBox">
   </form>
   <div id="cardSpace">
   </div>

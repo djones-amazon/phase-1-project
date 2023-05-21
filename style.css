@@ -13,6 +13,10 @@ img {
     text-align: center;
   }
 
+  .hiddenAsset {
+    visibility: hidden;
+  }
+
   /*.container {
     display: grid;
     grid-gap: 1rem;

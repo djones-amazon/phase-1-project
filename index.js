@@ -1,5 +1,6 @@
 const filteredNameList = [];
 const imgLocList = [];
+const foundNames = [];
 
 const getCharList =  async function() {
     const response = await fetch(`https://api.disneyapi.dev/character?films=The%20Lion%20King&pageSize=250`);
@@ -70,7 +71,8 @@ const renderCards = function() {
        // currentFigure.classList.add(`fig${index + 1}`);
         //debugger;
         const figDiv = document.createElement('div');
-        figDiv.classList.add(`fig${index + 1}`,`column`);
+        figDiv.id = charName.toLowerCase();
+        figDiv.classList.add("hiddenAsset");
 
         const currentImg = document.createElement('img');
         currentImg.src = imgLocList[index];
@@ -87,13 +89,22 @@ const renderCards = function() {
 }
 
 const runGame = () => {
+    
+    const ansBoxLabel = document.getElementById("ansBoxLabel");
+    ansBoxLabel.classList.remove("hiddenAsset");
     const userEntry = document.getElementById("ansBox");
+    userEntry.classList.remove("hiddenAsset");
     let userScore = 0;
 
     userEntry.addEventListener('input', (e) => {
-        const isMatch = filteredNameList.includes(e.target.value);
+        const userEntry = (e.target.value).toLowerCase();
+        const nameMatch = (charName) => charName.toLowerCase() == userEntry;
+        //const isMatch = filteredNameList.includes(e.target.value);
         
-        if(isMatch ) {
+        if(filteredNameList.some(nameMatch) && !(foundNames.includes(userEntry))) {
+            foundNames.push(userEntry);
+            const currentFig = document.getElementById(userEntry);
+            currentFig.classList.remove("hiddenAsset");
             userScore++;
             console.log(userScore);
             e.target.value = "";
@@ -107,6 +118,15 @@ const initGame = () => {
     //debugger;
     gameForm.elements['startGame'].addEventListener('click', (e) => {
         runGame();
+        document.getElementById("ansBox").focus();
+        gameForm.elements['startGame'].classList.add("hiddenAsset");
+        setTimeout(() => {
+            document.getElementById("ansBox").disabled = true;
+            gameForm['restart'].classList.remove("hiddenAsset");
+            gameForm['restart'].addEventListener('click', (e) => {
+                location.reload();
+            });
+        }, 10000)
         e.preventDefault();
     });
     //debugger;
