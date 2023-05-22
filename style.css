@@ -34,11 +34,11 @@ img {
 
   #scoreLine {
     font-size: 20px;
+    position: relative;
+    top: 50px;
   }
 
 #mainForm {
   position: relative; 
   top: 30px;
 }
-
-
